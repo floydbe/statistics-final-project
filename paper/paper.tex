@@ -19,24 +19,24 @@
 \section{Introduction}
 \label{sec:intro}
 
-In the field of Computer Science (CS), gender disparity has been a challenge for
-over 40 years [FIXME:CITE]. Specifically, women are typically underrepresented
-in the field. Today, the number of women in undergraduate Computer Science
-programs hovers around 18\%, nationally [FIXME:CITE]. Computer Science
-departments traditionally have trouble recruiting female students; this
-accounts for some of the gender disparity. However, departments also suffer
-from attrition of female students once they enter the major. A reason commonly
-cited among females who decide to leave the major is that they
+In the field of Computer Science (CS), gender disparity has been a challenge
+for over 40 years~\citep{FIXME}. Specifically, women are typically
+underrepresented in the field. Today, the number of women in undergraduate
+Computer Science programs hovers around 18\%, nationally [FIXME:CITE]. Computer
+Science departments traditionally have trouble recruiting female students; this
+naturally accounts for some of the gender disparity. However, departments also
+suffer from attrition of female students once they enter the major. A reason
+commonly cited among females who decide to leave the major is that they
 under-perform in introductory classes. Loosely, this claim admits two broad
 possibilities: either female students actually under-perform in introductory
 courses, or they only perceive that they under-perform. This paper considers
 each of these possibilities in turn. First, we investigate if female students
 actually perform worse than their male peers in introductory classes. We
 conclude that there is no evidence to support the claim that females
-under-perform in this regard. Second, we investigate if females perceive that
-they are under-performing and consider possible causes of this perception.
+under-perform in this regard. Second, we investigate if females only perceive
+that they are under-performing and consider possible causes of this perception.
 To explore these questions, we analyze survey and grade data for over one
-thousand students across CS1 and CS2 courses.
+thousand students across introductory CS courses.
 
 \section{Methods}
 \label{sec:methods}
@@ -47,10 +47,10 @@ surveys, and student grade information.
 \label{sec:survey}
 Students answered an IRB approved, web-based survey with approximately ten
 questions. The survey included demographic questions, Likert-scale questions,
-and free-form questions. The surveys were applied at various points such as the
+and free-form questions. The surveys were distributed at various points such as the
 beginning of a course, the end of a course, or when dropping a class. Students
 were tracked through an anonymous identifier in order to recognize when the
-same student takes the survey more than once. The dataset contains responses
+same student took the survey more than once. The dataset contains responses
 from 1019 distinct undergraduate students who were enrolled in Computer Science
 introductory courses between 2008 and 2010 at the University of Virginia.
 
@@ -81,59 +81,111 @@ in these courses; we find no evidence to support the claim that females perform
 worse than males in this regard. Then, we investigate if females only perceive
 that they are under-performing, and discuss possible factors that contribute to
 this perception. 
-
+% FIXME: add confidence intervals
 \subsection{RQ1: Do females under-perform their male peers in introductory CS classes?}
-We use final grade data to address this question. This data is converted into a numerical GPA scale, and is partitioned by gender (male, female, and unknown). 
+We use final grade data to address this question. These data are converted into a
+numerical GPA scale, and are partitioned by gender (male, female, and unknown).
+The descriptive statistics for these data are located in Table~\ref{tab:descriptive}.
+Additionally, Figure~\ref{fig:boxplot} shows a boxplot of the grade data, split
+by gender group. To investigate the differences in final grade based on gender,
+we performed an ANOVA with $\alpha = .05$. The ANOVA did not yield a
+significant effect of gender on final grade, $F(2,2018)=2.396$, $p=.0914$,
+$\omega^2=.0014$. This indicates that grades do not differ by gender group.
+However, since we were most interested in the differences between males and
+females, we also conducted a two-sided independent samples t-test using grade data from
+only those groups (i.e. the unknown group was dropped for this test). This
+t-test, performed at $\alpha=.05$, did not reveal any significant difference
+between males' and females' final grades, $t(1615)=1.8435$, $p=.0656$,
+$d=.0999$. This confirms our findings from the ANOVA: grade data does not
+differ significantly by gender.
 
+\subsection{RQ2: Do females perceive themselves as under-performing?}
+Since there is no significant difference between the actual performance of
+males and females in introductory CS courses, the remaining broad explanation
+for females reporting under-performance is that they only perceive the
+discrepancy. We investigate this hypothesis by analyzing the survey data. In
+particular, we focus on two questions: (1) "I am doing well in the CS/CPE
+program based on my own expectations" and (2) "I am doing well in the CS/CPE
+program based on the expectations of others". Students answered these questions
+on a 5-point Likert scale ranging from "Strongly Disagree" to "Strongly Agree".
+The response frequencies, partitioned by gender, are in
+Table~\ref{tab:expec-own} and Table~\ref{tab:expec-other}, respectively. 
 
+A chi-square test of independence was performed for each of these questions to
+investigate the relationship between gender and survey responses. The test for
+"I am doing well \dots based on my own expectations" did not reveal a
+significant effect on responses by gender at $\alpha=.05$, $\chi^2(4)=7.509$,
+$p=.1113$. However, a chi-square test for "I am doing well \dots based on the
+expectations of others" was significant at $\alpha=.05$, $\chi^2(4)=12.0696$,
+$p=.0168$. This means that gender significantly affects response to this
+question. Computing the standardized residuals reveals that both the "Strongly
+Agree" and "Strongly Disagree" options were significant. 
 
-\subsection{References}
+\section{Discussion}
+Female students report that they under-perform in introductory CS courses
+compared to their male peers. In this paper, we propose and evaluate two
+possible explanations. First, we investigate whether female student actually
+perform worse than male students by analyzing final grade data. We perform an
+ANOVA to test for differences in grade data based on all three gender groups
+(male, female, and unknown). The ANOVA did not provide statistically
+significant results. We also conducted a two-sided independent samples t-test
+based only on the grade data of the two groups of interest (males and females).
+This, too, failed to provide significant evidence that gender affects final
+grade in introductory courses. 
 
-LaTeX automatically generates a bibliography in the APA style from your .bib file. The citep command generates a formatted citation in parentheses \citep{Lamport1986}. The cite command generates one without parentheses. LaTeX was first discovered by \cite{Lamport1986}.
+Since females do not under-perform males in a significant manner, we
+investigate the possibilty that female students only perceive that they perform
+poorly in these courses. We use two survey questions to address this
+hypothesis. The first question asks for a Likert-style response to the
+following claim: "I am doing well in the CS/CPE program based on my own
+expectations". We perform a chi square test of independence to determine if
+gender affects response; the test did not reveal a significant difference.
+However, we also perform a chi square test of independence on reponses to "I am
+doing well in the CS/CPE program based on the expectations of others". This
+test showed that gender affects response to this question in a statistically
+significant way. The analysis of these survey results provides insight into the
+source of the perception of under-performance in female students. One
+possibility is that female students have higher expectations of themselves, and
+thus are more prone to perceiving poor performance. However, the first chi
+square test reveals that this is not the case: females and males have no
+significant difference in their own expectations. Another possibility is that
+female students perceive that others have higher expectations of them that male
+students do. The second chi square test supports this claim with statistical
+significance. This indicates that female students perceive that others expect more of
+them, and thus the females are more likely to report under-performing.
 
-\subsection{Tables and Figures}
+\begin{table}
+\begin{tabular}{l|c|c|c}
+		& male	& female	& unknown \\\hline
+N		& 1100	& 517		& 404 \\
+Mean	& 3.25	& 3.15		& 3.16 \\
+sd		& 0.93	& 0.97		& 0.99
+\end{tabular}
+\caption{\label{tab:descriptive}Descriptive statistics for final grade data.}
+\end{table}
 
-Use the table and tabular commands for basic tables --- see Table~\ref{tab:widgets}, for example. You can upload a figure (JPEG, PNG or PDF) using the files menu. To include it in your document, use the includegraphics command as in the code for Figure~\ref{fig:frog} below.
-
-% Commands to include a figure:
 \begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This is a figure caption.}
+\includegraphics[width=0.5\textwidth]{boxplot.png}
+\caption{\label{fig:boxplot}A boxplot of grade data, split by gender group.}
 \end{figure}
 
 \begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
+\begin{tabular}{l|l|l|l|l|l}
+		& Strongly Agree	& Agree	& Neutral	& Disagree	& Strongly Disagree \\\hline
+males	& 29				& 68	& 39		& 36		& 11 \\
+females & 9					& 51	& 33		& 22		& 13
 \end{tabular}
-\caption{\label{tab:widgets}An example table.}
+\caption{\label{tab:expec-own}Frequencies of responses to "I am doing well in the CS/CPE program based on my own expectations".}
 \end{table}
 
-\subsection{Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-$$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i$$
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-\subsection{Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
-
-We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
+\begin{table}
+\begin{tabular}{l|l|l|l|l|l}
+		& Strongly Agree	& Agree	& Neutral	& Disagree	& Strongly Disagree \\\hline
+males	& 34				& 64	& 55		& 25		& 6 \\
+females & 10				& 41	& 50		& 17		& 11 
+\end{tabular}
+\caption{\label{tab:expec-other}Frequencies of responses to "I am doing well in the CS/CPE program based on the expectations of others".}
+\end{table}
 
 \bibliography{example}
 
