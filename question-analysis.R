@@ -30,9 +30,14 @@ expec_other <- matrix(c(
 colnames(expec_other) <- c("s_agree","agree", "neutral", "disagree", "s_disagree")
 rownames(expec_other) <- c("male", "female")
 
+
+source("cramersV.R")
+
 cs1 <- chisq.test(expec_own)
 cs1
+cramersV(expec_own)
 
 cs2 <- chisq.test(expec_other)
 cs2
 cs2$stdres
+cramersV(expec_other)
