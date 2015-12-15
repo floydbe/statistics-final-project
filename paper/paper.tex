@@ -28,14 +28,14 @@ traditionally have trouble recruiting female students; this naturally accounts
 for some of the gender disparity. However, departments also suffer from
 attrition of female students once they enter the major. A reason commonly cited
 among females who decide to leave the major is that they under-perform in
-introductory classes.  Loosely, this claim admits two broad possibilities:
-either female students actually under-perform in introductory courses, or they
+introductory classes. Loosely, this claim admits two broad possibilities:
+either female students actually under-perform in introductory CS courses, or they
 only perceive that they under-perform. This paper considers each of these
 possibilities in turn. First, we investigate if female students actually
 perform worse than their male peers in introductory classes. We conclude that
 there is no evidence to support the claim that females under-perform in this
 regard. Second, we investigate if females only perceive that they are
-under-performing and consider possible causes of this perception.  To explore
+under-performing and consider possible causes of this perception. To explore
 these questions, we analyze survey and grade data for over one thousand
 students across introductory CS courses.
 
@@ -77,29 +77,29 @@ particular survey respondent to a set of CS course grades.
 We address two primary research questions by analyzing the dataset described in
 the Methods section. These questions correspond to two broad explanations for
 why female students report under-performing in introductory CS courses. First,
-we evaluate whether female student actually perform worse that their male peers
+we evaluate whether female students actually perform worse that their male peers
 in these courses; we find no evidence to support the claim that females perform
 worse than males in this regard. Then, we investigate if females only perceive
 that they are under-performing, and discuss possible factors that contribute to
 this perception. 
 
-\subsection{RQ1: Do females under-perform their male peers in introductory CS classes?}
-We use final grade data to address this question. These data are converted into a
-numerical GPA scale, and are partitioned by gender (male, female, and unknown).
-The descriptive statistics for these data are located in Table~\ref{tab:descriptive}.
-Additionally, Figure~\ref{fig:boxplot} shows a boxplot of the grade data, split
-by gender group. To investigate the differences in final grade based on gender,
-we performed an ANOVA with $\alpha = .05$. The ANOVA did not yield a
-significant effect of gender on final grade, $F(2,2018)=2.396$, $p=.0914$,
-$\omega^2=.0014$. The 95\% confidence interval for male-female is
-[-.0061,.1943]. This indicates that grades do not differ by gender group.
-However, since we were most interested in the differences between males and
-females, we also conducted a two-sided independent samples t-test using grade data from
-only those groups (i.e. the unknown group was dropped for this test). This
-t-test, performed at $\alpha=.05$, did not reveal any significant difference
-between males' and females' final grades, $t(1615)=1.8435$, $p=.0656$,
-$d=.0999$. This confirms our findings from the ANOVA: grade data does not
-differ significantly by gender.
+\subsection{RQ1: Do females under-perform their male peers in introductory CS
+classes?} We use final grade data to address this question. These data are
+converted into a numerical GPA scale, and are partitioned by gender (male,
+female, and unknown). The descriptive statistics for these data are located in
+Table~\ref{tab:descriptive}. Additionally, Figure~\ref{fig:boxplot} shows a
+boxplot of the grade data, split by gender group. To investigate the
+differences in final grade based on gender, we performed an ANOVA with $\alpha
+= .05$. The ANOVA did not yield a significant effect of gender on final grade,
+$F(2,2018)=2.396$, $p=.0914$, $\omega^2=.0014$. This indicates that grades do
+not differ by gender group. However, since we were most interested in the
+differences between males and females, we also conducted a two-sided
+independent samples $t$-test using grade data from only those groups (i.e. the
+unknown group was dropped for this test). This $t$-test, performed at
+$\alpha=.05$, did not reveal any significant difference between males' and
+females' final grades, $t(1615)=1.8435$, $p=.0656$, $d=.0999$. The 95\%
+confidence interval for male$-$female is [-.0061,.1943]. This confirms our
+findings from the ANOVA: grade data does not differ significantly by gender.
 
 \subsection{RQ2: Do females perceive themselves as under-performing?}
 Since there is no significant difference between the actual performance of
@@ -117,20 +117,21 @@ A chi-square test of independence was performed for each of these questions to
 investigate the relationship between gender and survey responses. The test for
 "I am doing well \dots based on my own expectations" did not reveal a
 significant effect on responses by gender at $\alpha=.05$, $\chi^2(4)=7.509$,
-$p=.1113$, $V=.1554$. However, a chi-square test for "I am doing well \dots based on the
-expectations of others" was significant at $\alpha=.05$, $\chi^2(4)=12.0696$,
-$p=.0168$, $V=.1964$. This means that gender significantly affects response to this
-question. Computing the standardized residuals reveals that both the "Strongly
-Agree" and "Strongly Disagree" options were significant. 
+$p=.1113$, $V=.1554$. However, a chi-square test for "I am doing well \dots
+based on the expectations of others" was significant at $\alpha=.05$,
+$\chi^2(4)=12.0696$, $p=.0168$, $V=.1964$. This means that gender significantly
+affects the response distrobution to this question. Computing the standardized
+residuals reveals that both the "Strongly Agree" and "Strongly Disagree"
+options had significant differences. 
 
 \section{Discussion}
 Female students report that they under-perform in introductory CS courses
 compared to their male peers. In this paper, we propose and evaluate two
-possible explanations. First, we investigate whether female student actually
+possible explanations. First, we investigate whether female students actually
 perform worse than male students by analyzing final grade data. We perform an
 ANOVA to test for differences in grade data based on all three gender groups
 (male, female, and unknown). The ANOVA did not provide statistically
-significant results. We also conducted a two-sided independent samples t-test
+significant results. We also conducted a two-sided independent samples $t$-test
 based only on the grade data of the two groups of interest (males and females).
 This, too, failed to provide significant evidence that gender affects final
 grade in introductory courses. The p-value for this test was surprisingly low;
@@ -155,7 +156,7 @@ possibility is that female students have higher expectations of themselves, and
 thus are more prone to perceiving poor performance. However, the first chi
 square test reveals that this is not the case: females and males have no
 significant difference in their own expectations. Another possibility is that
-female students perceive that others have higher expectations of them that male
+female students perceive that others have higher expectations of them than male
 students do. The second chi square test supports this claim with statistical
 significance. This indicates that female students perceive that others expect more of
 them, and thus the females are more likely to report under-performing.
